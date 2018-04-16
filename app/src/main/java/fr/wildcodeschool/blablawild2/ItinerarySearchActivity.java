@@ -8,6 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Date;
+
 public class ItinerarySearchActivity extends AppCompatActivity {
 
     public static final String EXTRA_TRIP = "EXTRA_TRIP";
@@ -37,9 +42,16 @@ public class ItinerarySearchActivity extends AppCompatActivity {
                     Intent intent = new Intent(ItinerarySearchActivity.this, ItineraryListActivity.class);
                     TripModel tripModel = new TripModel(departure, destination, date);
 
+                    // new Date() crée un objet contenant la date et l'heure du jour
+
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference tripRef = database.getReference("trips");
+                    tripRef.push().setValue(tripModel);
+
                     intent.putExtra(EXTRA_TRIP, tripModel);
                     startActivity(intent);
                 }
+
             }
         });
     }
