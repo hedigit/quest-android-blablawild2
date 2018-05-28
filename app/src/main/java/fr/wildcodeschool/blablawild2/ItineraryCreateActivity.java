@@ -49,7 +49,7 @@ public class ItineraryCreateActivity extends AppCompatActivity {
                 if (departure.isEmpty() || destination.isEmpty() || driver.isEmpty() || price.isEmpty()) {
                     Toast.makeText(ItineraryCreateActivity.this, R.string.fill_all_fields, Toast.LENGTH_SHORT).show();
                 } else {
-                    ItineraryModel itineraryModel = new ItineraryModel(departure, destination, driver, mDate, Integer.parseInt(price));
+                    ItineraryListActivity.ItineraryModel itineraryModel = new ItineraryListActivity.ItineraryModel(departure, destination, driver, mDate, Integer.parseInt(price));
                     // TODO : save itineraryModel into Firebase
 
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -58,7 +58,7 @@ public class ItineraryCreateActivity extends AppCompatActivity {
                     itineraryRef.child(key).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            Intent intent = new Intent(ItineraryCreateActivity.this, MainActivity.class);
+                            Intent intent = new Intent(ItineraryCreateActivity.this, ItineraryListActivity.class);
                             startActivity(intent);
                         }
 

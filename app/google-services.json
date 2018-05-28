@@ -15,12 +15,24 @@
       },
       "oauth_client": [
         {
+          "client_id": "383264102609-dllprp9csv2mhu5h3gjsnaaj9c5883tt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.wildcodeschool.blablawild2",
+            "certificate_hash": "3199eda6c3fbeedd99fca7ef488995745461122f"
+          }
+        },
+        {
           "client_id": "383264102609-88hkr4b1n16ps29jq31bcp1v34rc65o1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "fr.wildcodeschool.blablawild2",
             "certificate_hash": "f5a8f0115b645ab119b7001db977413005225aa9"
           }
+        },
+        {
+          "client_id": "383264102609-siv6an5go5q3bo5bbrhhki6tgdnp0gd3.apps.googleusercontent.com",
+          "client_type": 3
         },
         {
           "client_id": "383264102609-siv6an5go5q3bo5bbrhhki6tgdnp0gd3.apps.googleusercontent.com",

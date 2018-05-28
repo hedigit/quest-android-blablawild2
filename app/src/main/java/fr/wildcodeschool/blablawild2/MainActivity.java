@@ -13,8 +13,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Date;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -23,13 +21,13 @@ public class MainActivity extends AppCompatActivity {
         // accès à la base de données Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         // sélection de la référence "message"
-        DatabaseReference itineraryRef = database.getReference("itinerary");
+        DatabaseReference itineraryRef = database.getReference("itineraries");
         // lecture des données à la référence "itinerary" une seule fois
         itineraryRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // récupère la données contenue et la convertie en ItineraryModel
-                ItineraryModel itinerary = dataSnapshot.getValue(ItineraryModel.class);
+                ItineraryListActivity.ItineraryModel itinerary = dataSnapshot.getValue(ItineraryListActivity.ItineraryModel.class);
                 // affiche le conducteur de l'itineraire
                 Toast.makeText(MainActivity.this, itinerary.getDriver(), Toast.LENGTH_LONG).show();
             }
